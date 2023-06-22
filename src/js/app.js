@@ -6,7 +6,7 @@ import "../style/index.css";
  * 
     {
         includeCover: true, // if includeCover is true the algorithm should
-        background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da", // this is the url of the image that will used as background for the profile cover
+        background: "https://64.media.tumblr.com/30958a41682ea27ac1074de9c2720b66/ca410e2c17889c9d-d6/s1280x1920/6a8f920c41221bc75cff956a5f8348272591e328.jpg", // this is the url of the image that will used as background for the profile cover
         avatarURL: "https://randomuser.me/api/portraits/women/42.jpg", // this is the url for the profile avatar
         socialMediaPosition: "left", // social media bar position (left or right)
         
@@ -33,14 +33,30 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name == null ? "Glori" : variables.name} ${
+    variables.lastname == null ? "Zelaya" : variables.lastname
+  } </h1>
+          <h2>${
+            variables.role == null ? "Operations Associate" : variables.role
+          }</h2>
+          <h3>${variables.city == null ? "Heredia" : variables.city} , ${
+    variables.country == null ? "Costa Rica" : variables.country
+  }</h3>
+          <ul class=${variables.socialMediaPosition}>
+            <li><a href=https://twitter.com/${
+              variables.twitter == null ? "sanrio" : variables.twitter
+            }><i class="fab fa-twitter"></i></a></li>
+            <li><a href=https://github.com/${
+              variables.github == null ? "GlorianaZelaya" : variables.github
+            }><i class="fab fa-github"></i></a></li>
+            <li><a href=https://www.linkedin.com/in/${
+              variables.linkedin == null
+                ? "gloriana zelaya quirós"
+                : variables.linkedin
+            }><i class="fab fa-linkedin"></i></a></li>
+            <li><a href=https://www.instagram.com/${
+              variables.instagram == null ? "sanrio" : variables.instagram
+            }><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -54,14 +70,16 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://64.media.tumblr.com/30958a41682ea27ac1074de9c2720b66/ca410e2c17889c9d-d6/s1280x1920/6a8f920c41221bc75cff956a5f8348272591e328.jpg",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://i.pinimg.com/750x/59/28/22/5928222feba54bd91c52ca796430c6b1.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: "GlorianaZelaya",
     linkedin: null,
     instagram: null,
     name: null,
